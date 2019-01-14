@@ -6,6 +6,8 @@
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+# This is the handler class. It inherits from the BaseHTTPRequestHandler parent class, which is defined in http.server. I've defined one method, do_GET, which handles HTTP GET requests. When the web server receives a GET request, it will call this method to respond to it.
+
 
 class HelloHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -18,6 +20,7 @@ class HelloHandler(BaseHTTPRequestHandler):
 
         # Now, write the response body.
         self.wfile.write("Hello, HTTP!\n".encode())
+
 
 if __name__ == '__main__':
     server_address = ('', 8000)  # Serve on all addresses, port 8000.
